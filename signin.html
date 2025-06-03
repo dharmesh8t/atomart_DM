@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In and Log In</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            max-width: 400px;
+            width: 100%;
+        }
+        .container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .toggle {
+            text-align: center;
+            margin-top: 15px;
+        }
+        .toggle a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        .toggle a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" id="sign-in-container">
+    <h2>Sign In</h2>
+    <form id="sign-in-form">
+        <div class="form-group">
+            <label for="sign-in-username">Username</label>
+            <input type="text" id="sign-in-username" name="username" required>
+        </div>
+        <div class="form-group">
+            <label for="sign-in-email">Email</label>
+            <input type="email" id="sign-in-email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="sign-in-password">Password</label>
+            <input type="password" id="sign-in-password" name="password" required>
+        </div>
+        <button type="submit" class="btn">Sign In</button>
+    </form>
+    <div class="toggle">
+        Already have an account? <a href="#" id="show-log-in">Log In</a>
+    </div>
+</div>
+
+<div class="container" id="log-in-container" style="display: none;">
+    <h2>Log In</h2>
+    <form id="log-in-form">
+        <div class="form-group">
+            <label for="log-in-username">Username</label>
+            <input type="text" id="log-in-username" name="username" required>
+        </div>
+        <div class="form-group">
+            <label for="log-in-password">Password</label>
+            <input type="password" id="log-in-password" name="password" required>
+        </div>
+        <button type="submit" class="btn">Log In</button>
+    </form>
+    <div class="toggle">
+        Don't have an account? <a href="#" id="show-sign-in">Sign In</a>
+    </div>
+</div>
+
+<script>
+    document.getElementById('show-log-in').addEventListener('click', function() {
+        document.getElementById('sign-in-container').style.display = 'none';
+        document.getElementById('log-in-container').style.display = 'block';
+    });
+
+    document.getElementById('show-sign-in').addEventListener('click', function() {
+        document.getElementById('log-in-container').style.display = 'none';
+        document.getElementById('sign-in-container').style.display = 'block';
+    });
+</script>
+</body>
+</html>
+
